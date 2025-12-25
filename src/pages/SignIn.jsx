@@ -20,7 +20,7 @@ export default function SignIn() {
       return;
     }
     axios
-      .post("${import.meta.env.VITE_BACKEND_URL}/user/login", { email, password })
+      .post(`${import.meta.env.VITE_BACKEND_URL}/user/login`, { email, password })
       .then((response) => {
         if(response.status === 200) {
           setUser(response.data.user);

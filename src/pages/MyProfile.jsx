@@ -12,7 +12,7 @@ function MyProfile() {
 
   useEffect(() => {
     axios
-      .get("${import.meta.env.VITE_BACKEND_URL}/user/getuser", {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/user/getuser`, {
         headers:{"Authorization":`Bearer ${token}`},
       })
       .then((response)=>{
