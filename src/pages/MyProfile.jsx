@@ -12,7 +12,7 @@ function MyProfile() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user/getuser", {
+      .get("${import.meta.env.BACKEND_URL}/user/getuser", {
         headers:{"Authorization":`Bearer ${token}`},
       })
       .then((response)=>{
@@ -23,7 +23,7 @@ function MyProfile() {
     })
 
     axios
-      .get(`http://localhost:5000/product/user`, {headers:{"Authorization":`Bearer ${token}`}})
+      .get(`${import.meta.env.BACKEND_URL}/product/user`, {headers:{"Authorization":`Bearer ${token}`}})
       .then((response)=>{
         console.log(response);
         setProducts(response.data);
@@ -54,7 +54,7 @@ function MyProfile() {
       // Logic to upload or preview the image can be added here
       const img_link=await uploadImageToCloudinary(file);
       console.log(img_link);
-      axios.put(`http://localhost:5000/user/updateuser`,{picture:img_link},{
+      axios.put(`${import.meta.env.BACKEND_URL}/user/updateuser`,{picture:img_link},{
         headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}
       }).then(response=>{
         console.log(response);
@@ -70,7 +70,7 @@ function MyProfile() {
 
   async function handleDelete(id) {
     try{
-      axios.delete(`http://localhost:5000/product/${id}`,{
+      axios.delete(`${import.meta.env.BACKEND_URL}/product/${id}`,{
         headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}
       }).then((response)=>{
         console.log(response);
@@ -87,7 +87,7 @@ function MyProfile() {
 
   async function handleUpdate(id){
     try{
-      axios.patch(`http://localhost:5000/product/${id}`,{isSold:true},{
+      axios.patch(`${import.meta.env.BACKEND_URL}/product/${id}`,{isSold:true},{
         headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}
       }).then((response)=>{
         console.log(response);

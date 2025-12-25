@@ -23,7 +23,7 @@ export default function SignUp() {
     }
     const data = { name, phone, college, email, password };
     axios
-      .post("http://localhost:5000/user/register", data)
+      .post("${import.meta.env.BACKEND_URL}/user/register", data)
       .then((response) => {
         console.log(response);
         if (response.status === 201) {
