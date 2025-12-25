@@ -26,16 +26,16 @@ function App() {
     console.log(user);
   }, [user]);
   useEffect(() => {
-    axios.get(`${import.meta.env.BACKEND_URL}/category/get`).then((response) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/category/get`).then((response) => {
       setCat(() => response.data);
     });
 
-    axios.get(`${import.meta.env.BACKEND_URL}/product/`).then((response) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/product/`).then((response) => {
       setProd(() => response.data);
     });
 
     axios
-      .get(`${import.meta.env.BACKEND_URL}/user/getuser`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/user/getuser`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {

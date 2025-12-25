@@ -13,7 +13,7 @@ function Product() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.BACKEND_URL}/product/${id}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/product/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {
@@ -25,7 +25,7 @@ function Product() {
   }, []);
 
   async function handleWishlist() {
-    axios.put(`${import.meta.env.BACKEND_URL}/user/addwishlist`,{prod_id:id},
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}/user/addwishlist`,{prod_id:id},
       {headers: { Authorization: `Bearer ${localStorage.getItem("token")}`},}
     ).then((response)=>{
       setUser(response.data.user);

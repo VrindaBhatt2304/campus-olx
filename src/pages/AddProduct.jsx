@@ -25,7 +25,7 @@ function AddProduct() {
       const img_link=await uploadImageToCloudinary(img);
       image_array.push(img_link);
     }
-    axios.post(`${import.meta.env.BACKEND_URL}/product/create`,{title, price,description,category,seller:user._id,images:image_array},
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/product/create`,{title, price,description,category,seller:user._id,images:image_array},
         {headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}}
     ).then(response=>{
         if(response.status===201)
