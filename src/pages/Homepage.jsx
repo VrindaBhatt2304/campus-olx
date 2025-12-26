@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import banner from "../assets/crapbanner.png"
 import ProductCard from "../components/ProductCard";
 import UserContext from "../context/UserContext";
 
@@ -14,13 +15,10 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 font-sans">
 
       <section className="px-12 mt-12">
-        <div className="max-w-7xl mx-auto bg-gray-900 rounded-2xl p-14 text-white">
-          <h2 className="text-4xl font-bold mb-4">
-            Buy & Sell Within Your Campus
-          </h2>
-          <p className="text-lg opacity-90">
-            A simple marketplace for books, electronics and essentials.
-          </p>
+        <div className="max-w-7xl mx-auto rounded-3xl text-white">
+          <img className="rounded-3xl shadow"
+          src={banner} 
+          alt="" />
         </div>
       </section>
 

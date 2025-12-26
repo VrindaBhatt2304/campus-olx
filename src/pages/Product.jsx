@@ -56,12 +56,12 @@ function Product() {
             ))}
           </div>
         </div>
-        <div className="flex-1 flex flex-col gap-6 justify-center">
+        <div className="flex-1 flex flex-col gap-3 self-start justify-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             {product?.title}
           </h1>
-          <p className="text-2xl text-gray-700 font-semibold">
-            Price: ₹{product?.price}
+          <p className="text-2xl text-green-800 font-semibold">
+            ₹{product?.price}
           </p>
           <div className="flex flex-wrap gap-4 text-base text-gray-600">
             <span className="font-semibold text-gray-800">
@@ -71,8 +71,8 @@ function Product() {
               Seller: {product?.seller.name}
             </span>
           </div>
-          <div>
-            <p className="text-2xl font-semibold text-gray-700 mt-4 mb-8">
+          <div className="bg-white shadow-sm p-5 rounded-2xl">
+            <p className="text-2xl font-semibold text-gray-700 mb-4">
             Description: 
             </p>
             <p>
