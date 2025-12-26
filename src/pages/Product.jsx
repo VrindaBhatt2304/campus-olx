@@ -64,18 +64,22 @@ function Product() {
             Price: ₹{product?.price}
           </p>
           <div className="flex flex-wrap gap-4 text-base text-gray-600">
-            <p className="font-semibold text-gray-800">
+            <span className="font-semibold text-gray-800">
               Category: {product?.category.title}
-            </p>
+            </span>
+            <span className="font-semibold text-gray-800">
+              Seller: {product?.seller.name}
+            </span>
           </div>
           <div>
-            <p className="font-semibold text-gray-800">
-              Seller: {product?.seller.name}
+            <p className="text-lg text-gray-700 mt-4 mb-8">
+            Description: 
+            </p>
+            <p>
+              {product?.description}
             </p>
           </div>
-          <p className="text-lg text-gray-700 mt-4 mb-8">
-            Description: {product?.description}
-          </p>
+          
           <div className="flex gap-4">
             <button
             className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all w-fit text-lg"
